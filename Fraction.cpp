@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 class Fraction{
 private:
 	int denom;
@@ -41,5 +42,15 @@ public:
 	double divide(int num , int den){
 		return multiply(den,num);
 	}
+
+	void display(){
+		int whole = numo / denom;
+
+		double rem = (numo / denom) - whole;
+		double remNum = rem * denom;
+
+		cout << whole << " " << remNum << "/" << denom << endl;
+	}
+
 
 };
