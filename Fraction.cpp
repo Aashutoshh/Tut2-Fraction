@@ -7,7 +7,7 @@ private:
 public: 
 	Fraction(int num , int den) {
 		denom = den;
-		numo = num 
+		numo = num;
 	}
 
 
