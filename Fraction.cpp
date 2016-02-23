@@ -2,20 +2,24 @@
 using namespace std;
 class Fraction{
 private:
+	//variables are not to be accessed from outside hence private
 	int denom;
 	int numo;
 
 public: 
+	//constructor to set defualt values
 	Fraction(int num , int den) {
 		denom = den;
 		numo = num;
 	}
 
-
+	//deconstructor 
 	~Fraction(){
 
 	}
 
+
+	//accsessor and mutator methods
 	void getNumDenom(int num, int den){
 		numo = num;
 		denom = den;
@@ -26,6 +30,7 @@ public:
 		*den = denom;
 	}
 
+	//operational methods
 	double add(int num, int den){
 		return num / den + numo / denom;
 
@@ -44,13 +49,8 @@ public:
 	}
 
 	void display(){
-		int whole = numo / denom;
-
-		double rem = (numo / denom) - whole;
-		double remNum = rem * denom;
-
-		cout << whole << " " << remNum << "/" << denom << endl;
+		cout << numo / denom << " " << numo % denom << "/" << denom << endl;
 	}
 
-
 };
+//AASHUTOSHH RAMPERSADH 214506607
