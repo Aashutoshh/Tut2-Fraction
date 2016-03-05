@@ -54,3 +54,11 @@ public:
 
 };
 //AASHUTOSHH RAMPERSADH 214506607
+
+
+int main(){
+	Fraction a(5 , 4);
+	cout << "...."<< a.add(5, 4) << endl;
+	a.display();
+
+}
