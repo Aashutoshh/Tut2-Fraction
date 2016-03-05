@@ -11,6 +11,7 @@ public:
 	Fraction(int num , int den) {
 		denom = den;
 		numo = num;
+		
 	}
 
 	//deconstructor 
@@ -28,17 +29,20 @@ public:
 	void setNumDenom( int *num, int *den){
 		*num = numo;
 		*den = denom;
+
 	}
 
 	//operational methods
-	double add(int num, int den){
-		return num / den + numo / denom;
+
+	//operator overloading
+	Fraction& operator+ (const Fraction& other){
+		return Fraction( other.numo* denom + numo * other.denom, other.denom* denom ) ;
 
 	}
 
-	double subtract(int num, int den){
+	/*double subtract(int num, int den){
 		return add(num, -den);
-	}
+	}*/
 
 	double multiply(int num, int den){
 		return num / den * numo / denom;
@@ -58,7 +62,10 @@ public:
 
 int main(){
 	Fraction a(5 , 4);
-	cout << "...."<< a.add(5, 4) << endl;
-	a.display();
+	Fraction b(3,4);
+	Fraction c = a + b;
+	//cout << "...."<< a.add(5, 4) << endl;
+
+	c.display();
 
 }
