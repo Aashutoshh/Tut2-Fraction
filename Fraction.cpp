@@ -21,12 +21,12 @@ public:
 
 
 	//accsessor and mutator methods
-	void getNumDenom(int num, int den){
+	void setNumDenom(int num, int den){
 		numo = num;
 		denom = den;
 	}
 
-	void setNumDenom( int *num, int *den){
+	void getNumDenom( int *num, int *den){
 		*num = numo;
 		*den = denom;
 
@@ -40,11 +40,20 @@ public:
 	}
 
 	Fraction& operator- (Fraction& other){
-		return Fraction(other.numo* denom - numo * other.denom, other.denom* denom);
+		return Fraction(numo * other.denom - other.numo* denom, other.denom* denom);
 	}
+
+	Fraction& operator* (Fraction& other){
+		return Fraction(other.numo * numo, other.denom* denom);
+	}
+
+	Fraction& operator/ (Fraction& other){
+		return Fraction(other.denom * numo, other.numo * denom);
+	}
+
 	/*double subtract(int num, int den){
 		return add(num, -den);
-	}*/
+	}
 
 	double multiply(int num, int den){
 		return num / den * numo / denom;
@@ -53,7 +62,7 @@ public:
 	double divide(int num , int den){
 		return multiply(den,num);
 	}
-
+	*/
 	void display(){
 		cout << numo / denom << " " << numo % denom << "/" << denom << endl;
 	}
@@ -67,9 +76,13 @@ int main(){
 	Fraction b(3,4);
 	Fraction c = a + b;
 	Fraction d = a - b;
+	Fraction e = a*b;
+	Fraction f = a / b;
 	//cout << "...."<< a.add(5, 4) << endl;
 
 	c.display();
 	d.display();
+	e.display();
+	f.display();
 
 }
