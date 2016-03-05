@@ -35,11 +35,13 @@ public:
 	//operational methods
 
 	//operator overloading
-	Fraction& operator+ (const Fraction& other){
+	Fraction& operator+ (Fraction& other){
 		return Fraction( other.numo* denom + numo * other.denom, other.denom* denom ) ;
-
 	}
 
+	Fraction& operator- (Fraction& other){
+		return Fraction(other.numo* denom - numo * other.denom, other.denom* denom);
+	}
 	/*double subtract(int num, int den){
 		return add(num, -den);
 	}*/
@@ -64,8 +66,10 @@ int main(){
 	Fraction a(5 , 4);
 	Fraction b(3,4);
 	Fraction c = a + b;
+	Fraction d = a - b;
 	//cout << "...."<< a.add(5, 4) << endl;
 
 	c.display();
+	d.display();
 
 }
